@@ -82,50 +82,6 @@
         </div>
       </label>
       <label
-        class="gantt-elastic__header-label"
-        :style="{ ...style['header-label'] }"
-      >
-        {{ opts.locale["Before/After"] }}
-        <div
-          class="gantt-elastic__header-slider-wrapper"
-          :style="{ ...style['header-slider-wrapper'] }"
-        >
-          <vue-slider
-            class="gantt-elastic__header-slider"
-            tooltip="none"
-            :style="{ ...style['header-slider'] }"
-            :process-style="{ ...style['header-slider--process'] }"
-            :slider-style="{ ...style['header-slider--slider'] }"
-            v-model="scope"
-            :max="31"
-            :min="0"
-            width="100px"
-          ></vue-slider>
-        </div>
-      </label>
-      <label
-        class="gantt-elastic__header-label"
-        :style="{ ...style['header-label'] }"
-      >
-        {{ opts.locale["Task list width"] }}
-        <div
-          class="gantt-elastic__header-slider-wrapper"
-          :style="{ ...style['header-slider-wrapper'] }"
-        >
-          <vue-slider
-            class="gantt-elastic__header-slider"
-            tooltip="none"
-            :style="{ ...style['header-slider'] }"
-            :process-style="{ ...style['header-slider--process'] }"
-            :slider-style="{ ...style['header-slider--slider'] }"
-            v-model="divider"
-            :max="100"
-            :min="0"
-            width="100px"
-          ></vue-slider>
-        </div>
-      </label>
-      <label
         class="gantt-elastic__header-task-list-switch--wrapper"
         :style="{ ...style['header-task-list-switch--label'] }"
       >
