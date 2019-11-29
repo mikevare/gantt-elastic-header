@@ -37,6 +37,15 @@
       >
         {{ opts.locale.Now }}
       </button>
+
+      <button
+        class="gantt-elastic__header-btn-recenter"
+        :style="{ ...style['header-btn-recenter'] }"
+        @click.prevent="toggleContainer"
+      >
+        Volle Breite
+      </button>
+
       <label
         class="gantt-elastic__header-label"
         :style="{ ...style['header-label'] }"
@@ -205,6 +214,16 @@ export default {
     this.opts = this.root.mergeDeep({}, defaultOptions, this.options);
   },
   methods: {
+    toggleContainer() {
+      var main = document.querySelector('main.py-4');
+      if (main.classList.contains('container')) {
+        main.classList.remove('container');
+        main.classList.add('px-4');
+      } else {
+        main.classList.add('container');
+        main.classList.remove('px-4');
+      }
+    },
     getImage() {
       this.root.getImage("image/png").then(imgB64 => {
         const link = document.createElement("a");
