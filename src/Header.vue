@@ -213,6 +213,9 @@ export default {
     this.style = this.root.mergeDeep({}, defaultStyle, this.dynamicStyle);
     this.opts = this.root.mergeDeep({}, defaultOptions, this.options);
   },
+  mounted() {
+    this.toggleHeaderFooterContainer();
+  },
   methods: {
     toggleContainer() {
       var main = document.querySelector('main.py-4');
@@ -220,8 +223,38 @@ export default {
         main.classList.remove('container');
         main.classList.add('px-4');
       } else {
-        main.classList.add('container');
         main.classList.remove('px-4');
+        main.classList.add('container');
+      }
+      this.toggleHeaderFooterContainer();
+    },
+    toggleHeaderFooterContainer() {
+      var menu = document.querySelector('.navbar > div');
+      var footer = document.querySelector('footer > div');
+
+      if (menu.classList.contains('container')) {
+        
+        footer.classList.remove('container');
+        footer.classList.add('py-4');
+        footer.classList.add('px-4');
+        
+        menu.classList.remove('container');
+        menu.classList.add('flex');
+        menu.classList.add('row');
+        menu.classList.add('justify-bewteen');
+        menu.style.width = '100%';
+
+      } else {
+
+        footer.classList.add('container');
+        footer.classList.remove('py-4');
+        footer.classList.remove('px-4');
+
+        menu.classList.add('container');
+        menu.classList.remove('flex');
+        menu.classList.remove('row');
+        menu.classList.remove('justify-bewteen');
+
       }
     },
     getImage() {
